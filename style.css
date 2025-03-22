@@ -1,0 +1,30 @@
+body {
+    background-color: #0b1b2d;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    color: #f2a900;
+}
+
+canvas {
+    display: none;
+    margin: 20px auto;
+    background-color: #2e3c56;
+    border: 2px solid #f2a900;
+}
+
+.difficulty-btn {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f2a900;
+    border: none;
+    color: black;
+    font-weight: bold;
+}
