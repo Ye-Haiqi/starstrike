@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starstrike</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Starstrike</h1>
+    <div id="difficultySelection">
+        <h2>Select Difficulty</h2>
+        <button class="difficulty-btn" onclick="startGame('easy')">Easy</button>
+        <button class="difficulty-btn" onclick="startGame('medium')">Medium</button>
+        <button class="difficulty-btn" onclick="startGame('hard')">Hard</button>
+    </div>
+    <canvas id="gameCanvas" width="800" height="500"></canvas>
+    <div id="healthDisplay"></div>
+    <div id="gameOverMessage" style="display: none; font-size: 24px; color: red; font-weight: bold;">Game Over</div>
+    <script src="script.js"></script>
+</body>
+</html>
