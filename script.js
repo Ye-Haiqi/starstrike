@@ -3,10 +3,8 @@ let ctx = canvas.getContext("2d");
 let player, enemies = [], bullets = [], enemyBullets = [], boss;
 let gameActive = false;
 let alienDirection = 1;
-let currentDifficulty; // Track the current difficulty level
 
 function startGame(difficulty) {
-    currentDifficulty = difficulty; // Store the selected difficulty
     document.getElementById("difficultySelection").style.display = "none";
     canvas.style.display = "block";
     document.getElementById("gameOverMessage").style.display = "none";
@@ -229,10 +227,12 @@ function endGame(won) {
         alert("Game Over! You lost!");
     }
 
-    // Restart the game automatically after 2 seconds
+    // Return to the choice page after 2 seconds
     setTimeout(() => {
-        startGame(currentDifficulty); // Restart with the same difficulty
-    }, 2000); // 2-second delay before restarting
+        document.getElementById("difficultySelection").style.display = "block"; // Show choice page
+        canvas.style.display = "none"; // Hide canvas
+        document.getElementById("gameOverMessage").style.display = "none"; // Hide game-over message
+    }, 2000); // 2-second delay before returning to the choice page
 }
 
 function gameLoop() {
