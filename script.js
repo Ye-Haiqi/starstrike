@@ -195,10 +195,7 @@ function checkCollisions() {
             bullets.splice(bulletIndex, 1); // Remove bullet
 
             if (boss.health <= 0) {
-                boss = null; // Remove boss
-                alert("You defeated the boss! You win!");
-                gameActive = false;
-                document.getElementById("gameOverMessage").style.display = "block";
+                endGame(true); // Player wins
             }
         }
     });
@@ -215,11 +212,25 @@ function checkCollisions() {
             enemyBullets.splice(index, 1);
             updateHealthDisplay();
             if (player.health <= 0) {
-                gameActive = false;
-                document.getElementById("gameOverMessage").style.display = "block";
+                endGame(false); // Player loses
             }
         }
     });
+}
+
+function endGame(won) {
+    gameActive = false;
+
+    if (won) {
+        alert("You defeated the boss! You win!");
+    }
+
+    // Reset game state and show main menu
+    setTimeout(() => {
+        document.getElementById("difficultySelection").style.display = "block"; // Show main menu
+        canvas.style.display = "none"; // Hide canvas
+        document.getElementById("gameOverMessage").style.display = "none"; // Hide game-over message
+    }, 1000); // 1-second delay before returning to the main menu
 }
 
 function gameLoop() {
